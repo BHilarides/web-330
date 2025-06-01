@@ -32,7 +32,7 @@ function playDrawPoker() {
 
    // Change the bet when the selection changes
    betSelection.onchange = function() {
-    pokerGame.currentBet = parseInt(this.value);
+     pokerGame.currentBet = parseInt(this.value);
    }
 
       dealButton.addEventListener("click", function() {
@@ -44,6 +44,12 @@ function playDrawPoker() {
          standButton.disabled = false;      // Turn on the Stand Button
          statusBox.textContent = "";        // Erase any status messages
          }
+
+         // Reduce the bank by the size of the bet
+         bankBox.value = pokerGame.placeBet();
+      else {
+        statusBox.textContent = "Insufficient Funds";
+      }
       });
 
 
