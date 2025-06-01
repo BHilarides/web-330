@@ -27,6 +27,11 @@ function pokerCard(cardSuit, cardRank) {
   this.rank = cardRank;
 }
 
+// Method to reference the image of the poker card
+pokerCard.prototype.cardImage = function() {
+  return this.ranks + "_" + this.suit + ".png";
+}
+
 /* Constructor function for poker decks */
 function pokerDeck() {
   // List the suit and ranks
@@ -34,6 +39,11 @@ function pokerDeck() {
   let ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10",
                "jack", "queen", "king", "ace"];
   this.cards = [];
+
+  /* Constructor function for poker hands */
+  function pokerHand(handLength) {
+    this.cards = new Array(handLength);
+  }
 
   //Add a card for each combination of suit and rank
   for (let i = 0; i < 4; i++) {
@@ -48,6 +58,12 @@ function pokerDeck() {
     this.cards.sort(function() {
       return 0.5 - Math.random();
     })
+  };
+
+  //Method to deal cards from the deck into a hand
+  this.dealTo = function(pokerHand) {
+    let cardsDealt = pokerHand.cards.length;
+    pokerHand.cards = this.cards.splice(0, cardsDealt);
   };
 };
 
