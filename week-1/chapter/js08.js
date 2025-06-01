@@ -63,7 +63,12 @@ function playDrawPoker() {
 
          // Deal 5 cards from the deck to the hand
          myDeck.dealTo(myHand);
-         console.log(myDeck, myHand);
+
+         // Display the card images on the table
+         for (let i = 0; i < cardImages.length; i++) {
+          cardImages[i].src = myHand.cards[i].cardImage();
+         }
+
       } else {
           statusBox.textContent = "Insufficient Funds";
       }
