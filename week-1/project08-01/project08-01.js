@@ -34,7 +34,20 @@ timer.prototype.runPause = function(timer, minBox, secBox) {
   }
 };
 
-
+function countdown(timer, minBox, secBox) {
+  if (timer.seconds > 0) {
+    timer.seconds -= 1;
+  } else if (timer.minutes > 0) {
+    timer.minutes -= 1;
+    timer.seconds = 59;
+  } else {
+    // When timer reaches 0:0, stop timer
+    window.clearInterval(timer.timeID);
+    timer.timeID = null;
+  }
+  }}
+  }
+}
 
 /*---------------Interface Code -----------------*/
 
