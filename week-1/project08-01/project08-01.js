@@ -45,9 +45,12 @@ function countdown(timer, minBox, secBox) {
     window.clearInterval(timer.timeID);
     timer.timeID = null;
   }
-  }}
-  }
+  // Update the timer display
+  timer.minutes = minBox.value;
+  timer.seconds = secBox.value;
 }
+
+
 
 /*---------------Interface Code -----------------*/
 
@@ -56,3 +59,19 @@ let minBox = document.getElementById("minutesBox");
 let secBox = document.getElementById("secondsBox");
 let runPauseTimer = document.getElementById("runPauseButton");
 
+// Creating timer object
+myTimer = new timer(parseInt(minBox.value,10), parseInt(secBox.value, 10));
+
+// Event handlers for min/sec
+minBox.onChange = function() {
+  myTimer.minutes = parseInt(minBox.value, 10);
+};
+
+secBox.onChange = function() {
+  myTimer.seconds = parseInt(minBox.value, 10);
+};
+
+// Event handler for runPauseTimer button
+runPauseTimer.onclick = function() {
+  myTimer.runPause(myTimer, minBox, secBox);
+};
