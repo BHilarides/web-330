@@ -16,7 +16,7 @@ function timer(min, sec) {
   this.minutes = min;
   this.seconds = sec;
   this.timer.timeId = null;
-}
+};
 
 // Runpause method for timer object
 timer.prototype.runPause = function(timer, minBox, secBox) {
@@ -48,7 +48,7 @@ function countdown(timer, minBox, secBox) {
   // Update the timer display
   timer.minutes = minBox.value;
   timer.seconds = secBox.value;
-}
+};
 
 
 /*---------------Interface Code -----------------*/
