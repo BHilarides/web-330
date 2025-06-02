@@ -13,9 +13,9 @@
 /*--------------- Object Code --------------------*/
 // Constructor function for the timer object
 function timer(min, sec) {
-  timer.minutes = min;
-  timer.seconds = sec;
-  timer.timeId = null;
+  this.minutes = min;
+  this.seconds = sec;
+  this.timer.timeId = null;
 }
 
 // Runpause method for timer object
@@ -51,7 +51,6 @@ function countdown(timer, minBox, secBox) {
 }
 
 
-
 /*---------------Interface Code -----------------*/
 
 /* Interface Objects */
@@ -60,7 +59,7 @@ let secBox = document.getElementById("secondsBox");
 let runPauseTimer = document.getElementById("runPauseButton");
 
 // Creating timer object
-myTimer = new timer(parseInt(minBox.value,10), parseInt(secBox.value, 10));
+let myTimer = new timer(parseInt(minBox.value, 10), parseInt(secBox.value, 10));
 
 // Event handlers for min/sec
 minBox.onChange = function() {
@@ -72,6 +71,6 @@ secBox.onChange = function() {
 };
 
 // Event handler for runPauseTimer button
-runPauseTimer.onclick = function() {
+runPauseTimer.onClick = function() {
   myTimer.runPause(myTimer, minBox, secBox);
 };
