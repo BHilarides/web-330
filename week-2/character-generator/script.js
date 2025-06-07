@@ -3,9 +3,9 @@
   Chapter 1
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Ben Hilarides
+  Date: 6.7.25
+  Filename: script.js
 */
 
 "use strict";
