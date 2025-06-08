@@ -11,7 +11,17 @@
 "use strict";
 
 function createCharacter(name, gender, characterClass) {
-  // TODO: Implement this function
+  return {
+    getName: function() {
+      return name;
+    },
+    getGender: function () {
+      return gender;
+    },
+    getCharacterClass: function () {
+      return characterClass;
+    }
+  };
 }
 
 document.getElementById("generateHero").addEventListener("click", function(e) {
