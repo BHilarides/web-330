@@ -10,7 +10,7 @@
 
 "use strict";
 
-function createCharacter(name, gender, characterClass) {
+function createCharacter(name, gender, charClass) {
   return {
     getName: function() {
       return name;
@@ -18,7 +18,7 @@ function createCharacter(name, gender, characterClass) {
     getGender: function () {
       return gender;
     },
-    getCharacterClass: function () {
+    getCharClass: function () {
       return characterClass;
     }
   };
@@ -27,7 +27,12 @@ function createCharacter(name, gender, characterClass) {
 document.getElementById("generateHero").addEventListener("click", function(e) {
   e.preventDefault();
 
-  // TODO: Get form values
+  const name = document.getElementById("heroName").value.trim();
+  const gender = document.getElementById("heroGender").value;
+  const charClass = document.getElementById("heroClass").value;
+  const output = document.getElementById("characterOutput");
+
+  if (name && gender && charClass) )
 
   // TODO: Create character
 
