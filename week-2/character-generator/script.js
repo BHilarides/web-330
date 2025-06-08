@@ -19,7 +19,7 @@ function createCharacter(name, gender, charClass) {
       return gender;
     },
     getCharClass: function () {
-      return characterClass;
+      return charClass;
     }
   };
 }
@@ -32,9 +32,18 @@ document.getElementById("generateHero").addEventListener("click", function(e) {
   const charClass = document.getElementById("heroClass").value;
   const output = document.getElementById("characterOutput");
 
-  if (name && gender && charClass) )
+  if (name && gender && charClass) {
+    const newHero = createCharacter(name, gender, charClass);
 
-  // TODO: Create character
+    output.innerHTML = `
+    <h2>Your Character</h2>
+    <p>Name: ${newHero.getName()}</p>
+    <p>Gender: ${newHero.getGender()}</p>
+    <p>Class: ${newHero.getCharClass()}</p>
+    `;
 
-  // TODO: Display character information
+    }  else {
+      output.innerHTML = `
+      <p>Please complete all fields to create your character.</p>`;
+    }
 });
