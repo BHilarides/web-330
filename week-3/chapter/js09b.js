@@ -12,7 +12,6 @@
 
 // Retrieve the text of the query string
 let qString = location.search.slice(1);
-console.log(qString);
 
 // Replace the encoded characters in the query string
 qString = qString.replace(/\+/g, " ");
@@ -39,4 +38,18 @@ for (let items of formData) {
   inputBox.value = fieldValue;
   inputBox.disabled = true;
   document.getElementById("contactInfo").appendChild(inputBox);
+}
+
+// Store data to local storage when the user signs up
+document.getElementById("signupBtn").onClick = function() {
+
+  // Data fields to be saved to local storage
+  let formFields = document.querySelectorAll("#contactInfo input, input[type=radio], textarea");
+
+  // write each field name and value to local storage
+  for (let fields of formFields) {
+    localStorage.setItem(fields.name, fields.value);
+  }
+
+  console.log(localStorage);
 }
