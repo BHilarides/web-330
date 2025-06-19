@@ -43,3 +43,37 @@ for (let i = 0; i < 48; i++) {
 // Node list representing the puzzle pieces
 let pieces = document.querySelectorAll("div#puzzleBoard img");
 
+// Add event listener to each puzzle piece
+for (let i = 0; i < pieces.length; i++) {
+   pieces[i].addEventListener("pointerdown", grabPiece)
+}
+
+// function to grab piece
+function grabPiece(e) {
+   pointerX = e.clientX;
+   pointerY = e.clientY;
+   e.target.style.touchAction = "none";
+   zCounter++;
+   e.target.style.zIndex = zCounter;
+
+   pieceX = e.target.offsetLeft;
+   pieceY = e.target.offsetTop;
+
+   e.target.addEventListener("pointermove", movePiece);
+   e.target.addEventListener("pointerup", dropPiece);
+}
+
+// function to move piece
+function movePiece(e) {
+  let diffX = e.clientX - pointerX;
+  let diffY = e.clientY - pointerY;
+  e.target.style.left = pieceX + diffX + "px";
+  e.target.style.top = pieceY + diffY + "px";
+}
+
+// function to drop piece
+
+function dropPiece(e) {
+  e.target.removeEventListener("pointermove");
+  e.target.removeEventListener("pointerup");
+}
