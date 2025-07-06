@@ -1,6 +1,6 @@
-#!"D:\xampp\perl\bin\perl.exe"
+#!"C:\xampp\perl\bin\perl.exe"
 
-# Confirm that perl is located in the usr/bin/perl folder on the server
+# Confirm that perl is located in the C:\xampp\perl\bin\perl folder on the server
 
 #All perl scripts should use strict
 use strict;
