@@ -40,11 +40,11 @@ function reserveTable(tableNumber, callback, time) {
   }
 
   table.isReserved = true;
-  console.log(`Reservation set. Waiting ${time}ms...`);
+  callback(`Table ${tableNumber} is now reserved for ${time} minutes.`);
 
   setTimeout(() => {
-    console.log(`Timeout complete. Confirming reservation.`);
-    callback(`Table ${tableNumber} has been reserved for ${time} minutes.`);
+    table.isReserved = false;
+    console.log(`Table ${tableNumber} is now available again.`);
   }, time * 60000); // Convert minutes to milliseconds
 }
 
