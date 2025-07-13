@@ -34,7 +34,7 @@ let chefs = [
 function retrieveChef1() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() < 0.9) {
+      if (Math.random() < 0.8) {
         resolve(chefs[0]);
       } else {
         reject("Error: Failed to retrieve Chef 1's information.");
@@ -46,7 +46,7 @@ function retrieveChef1() {
 function retrieveChef2() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() < 0.9) {
+      if (Math.random() < 0.8) {
         resolve(chefs[1]);
       } else {
         reject("Error: Failed to retrieve Chef 2's information.");
@@ -58,7 +58,7 @@ function retrieveChef2() {
 function retrieveChef3() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() < 0.9) {
+      if (Math.random() < 0.8) {
         resolve(chefs[2]);
       } else {
         reject("Error: Failed to retrieve Chef 3's information.");

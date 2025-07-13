@@ -9,6 +9,13 @@
 */
 
 /* Add your CSS styles here */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
 .error {
   color: red;
   font-weight: bold;
@@ -17,4 +24,8 @@
   border: 1px solid #ccc;
   padding: 1em;
   margin: 1em 0;
+}
+h3 {
+  color: #333;
+  margin-top: 0;
 }
