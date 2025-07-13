@@ -11,7 +11,6 @@
 "use strict";
 
 let chefs = [
-  // Each chef object should have a name, specialty, weakness, and restaurantLocation
   {
     name: "Jimmy John",
     specialty: "Sandwiches",
@@ -83,7 +82,6 @@ function displayError(message) {
   container.innerHTML = `<p class="error">${message}</p>`;
 }
 
-// TODO: Use Promise.allSettled to retrieve all chefs' information and update the webpage accordingly
 Promise.allSettled([retrieveChef1(), retrieveChef2(), retrieveChef3()])
   .then(results => {
     results.forEach((result, index) => {
