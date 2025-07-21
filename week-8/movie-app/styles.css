@@ -8,4 +8,38 @@
   Filename: styles.css
 */
 
-/* Add your styles here */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 2em;
+  text-align: center;
+}
+
+.form-container {
+  background: white;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input[type="text"] {
+  padding: 0.5em;
+  width: 70%;
+  margin-right: 0.5em;
+}
+
+button {
+  padding: 0.5em 1em;
+}
+
+#movie-info {
+  margin-top: 2em;
+  text-align: left;
+}
+
+#error-message {
+  color: red;
+  margin-top: 1em;
+}
